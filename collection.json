@@ -1,0 +1,10 @@
+{
+  "$schema": "node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "feature-module": {
+      "description": "Génère un module de fonctionnalité avec routing, composants (View, Update, List), un fichier config et un modèle.",
+      "factory": "./src/feature-module/index#featureModuleFactory",
+      "schema": "./src/feature-module/schema.json"
+    }
+  }
+}

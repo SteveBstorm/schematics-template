@@ -1,0 +1,20 @@
+// Modèle de données pour un élément <%= classify(name) %>
+export class <%= classify(name) %>Model {
+  id: string | number; // L'identifiant unique
+  name: string; // Un champ exemple
+  description?: string; // Un champ optionnel
+  createdAt?: Date;
+
+  constructor(data: Partial<<%= classify(name) %>Model> = {}) {
+    this.id = data.id || 0; // Valeur par défaut ou traitement spécifique
+    this.name = data.name || '';
+    this.description = data.description;
+    this.createdAt = data.createdAt ? new Date(data.createdAt) : undefined;
+  }
+}
+
+// Vous pouvez ajouter des méthodes utiles à la classe modèle si nécessaire
+// exemple:
+// get formattedName(): string {
+//   return this.name.toUpperCase();
+// }

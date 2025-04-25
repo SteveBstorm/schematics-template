@@ -1,0 +1,27 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { <%= classify(name) %>ListComponent } from './components/list/<%= dasherize(name) %>-list.component';
+import { <%= classify(name) %>ViewComponent } from './components/view/<%= dasherize(name) %>-view.component';
+import { <%= classify(name) %>UpdateComponent } from './components/update/<%= dasherize(name) %>-update.component';
+
+const routes: Routes = [
+  {
+    path: '', // Route racine du module pointe vers la liste
+    component: <%= classify(name) %>ListComponent
+  },
+  {
+    path: 'view/:id', // Route pour voir un élément par ID
+    component: <%= classify(name) %>ViewComponent
+  },
+  {
+    path: 'update/:id', // Route pour modifier un élément par ID
+    component: <%= classify(name) %>UpdateComponent
+  }
+  // Ajoutez d'autres routes si nécessaire (ex: 'create')
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class <%= classify(name) %>RoutingModule { }

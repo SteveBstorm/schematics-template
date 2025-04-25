@@ -1,0 +1,19 @@
+import { Component } from '@angular/core';
+import { <%= classify(name) %>Model } from '../../infrastructure/models/<%= dasherize(name) %>.model'; // Chemin relatif vers le modèle
+
+@Component({
+  selector: 'app-<%= dasherize(name) %>-list',
+  templateUrl: './<%= dasherize(name) %>-list.component.html',
+  styleUrls: ['./<%= dasherize(name) %>-list.component.scss'],
+  standalone: false
+})
+export class <%= classify(name) %>ListComponent {
+
+  // Rendre le type de modèle accessible pour le template
+  public modelType = <%= classify(name) %>Model;
+
+  constructor() {
+    // Logique pour charger la liste des éléments
+  }
+
+}

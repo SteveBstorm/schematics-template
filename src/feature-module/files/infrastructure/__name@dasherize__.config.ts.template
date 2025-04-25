@@ -1,0 +1,14 @@
+// Configuration spécifique pour la fonctionnalité <%= classify(name) %>
+export const <%= camelize(name) %>Config = {
+  title: '<%= classify(name) %> Feature',
+  endpoint: '/api/<%= dasherize(name) %>',
+  // Ajoutez d'autres paramètres de configuration ici
+  pageSize: 10
+};
+
+// Vous pouvez aussi définir une interface si la config devient complexe
+// export interface <%= classify(name) %>Config {
+//   title: string;
+//   endpoint: string;
+//   pageSize: number;
+// }

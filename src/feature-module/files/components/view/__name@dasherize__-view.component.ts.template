@@ -1,0 +1,25 @@
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { <%= camelize(name) %>Config } from '../../infrastructure/<%= dasherize(name) %>.config'; // Chemin relatif vers le fichier config
+
+@Component({
+  selector: 'app-<%= dasherize(name) %>-view',
+  templateUrl: './<%= dasherize(name) %>-view.component.html',
+  styleUrls: ['./<%= dasherize(name) %>-view.component.scss'],
+  standalone: false
+})
+export class <%= classify(name) %>ViewComponent implements OnInit {
+
+  public featureConfig = <%= camelize(name) %>Config; // Rendre la config accessible au template
+  public itemId: string | null = null;
+
+  constructor(private route: ActivatedRoute) { }
+
+  ngOnInit(): void {
+    // Récupérer l'ID depuis les paramètres de la route
+    this.itemId = this.route.snapshot.paramMap.get('id');
+    console.log('Viewing <%= classify(name) %> with ID:', this.itemId);
+    // Ici, vous utiliseriez probablement l'ID pour charger les données spécifiques
+  }
+
+}

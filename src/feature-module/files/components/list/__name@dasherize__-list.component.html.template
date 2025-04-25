@@ -1,0 +1,5 @@
+<p>
+  Liste des <%= classify(name) %>
+</p>
+
+<app-generic-list [model]="modelType"></app-generic-list>

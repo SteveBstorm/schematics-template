@@ -1,0 +1,5 @@
+<p>
+  Affichage de <%= classify(name) %> (ID: {{ itemId }})
+</p>
+
+<app-generic-view [config]="featureConfig"></app-generic-view>

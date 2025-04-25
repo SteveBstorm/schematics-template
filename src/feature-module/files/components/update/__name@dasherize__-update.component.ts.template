@@ -1,0 +1,23 @@
+
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+@Component({
+  selector: 'app-<%= dasherize(name) %>-update',
+  templateUrl: './<%= dasherize(name) %>-update.component.html',
+  styleUrls: ['./<%= dasherize(name) %>-update.component.scss'],
+  standalone: false
+})
+export class <%= classify(name) %>UpdateComponent implements OnInit {
+
+  public itemId: string | null = null;
+
+  constructor(private route: ActivatedRoute) { }
+
+  ngOnInit(): void {
+    this.itemId = this.route.snapshot.paramMap.get('id');
+    console.log('Updating <%= classify(name) %> with ID:', this.itemId);
+    // Logique pour charger les données du formulaire, etc.
+  }
+
+}
